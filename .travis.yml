@@ -6,6 +6,6 @@ deploy:
   provider: heroku
   api_key:
     secure: G22vbqWwzJjiwv6CMEc7be8dM+WWM+mtlW1PSZ6+xB5xDJNvIiKxCdtxO7Y7iBL0cUcUelKhV6Lc9ETjiPmrt37h8yehWqMu6eiY6IYpB/KporHg9d+phZED2Z2avgrTP9v4m/n/dyXGHvKlD74IjVfDV+8B/x9xdwL1ryeKmvXL2z0GiUBuFoiM//THUDdNQ9VhiNooPWh/NuNOhBNQeZ5xTQv5yBjcwrrmAwmjUqEI4x70ADMo1cf494Z29XEHb7m7TTGUdlfcQzkzi9koJ47Rd4Ijj07k6NatWCyl9MOAjd9gVR6FpiyCnXZD85TNhOZJ2t6P4l1k1rO6TBV2GI8oezwMCgYeg0YCwCel6f2rWZmYXtEzs2zXOEfqIigMIxUj+PBdQ67mMr/YxchonGqP9tHKVyRRNp0HqFVVbEs4zEStfL2uUqagz3KFZt+L2U/eNY+3DQH1101L4+2QkVVhAZwv9EuSvccAdhfzvbOWqzOtZdYuwSnXydebIQKjI9/mP+AK7wI7eOg1uFGlZc/pgsqtJRPxJygTwoEVkhy+aPEw+zdzo+7aK6jHUCY2789kGMvJkKpCMiZNtZjbaPU0MDSELoxQnJ0W7+7v6v6rLyuGoGs9qGNHtMwEbcxwXx+Kohhbb+UHQYoLv4TF1THoAKqOeVzrh4LvL5Nardg=
-#    app: jib-basicwebapp
-#    on:
-#      repo: jayatisarkar/BasicWebApp
+  app: jib-basicwebapp
+  on:
+    repo: jayatisarkar/BasicWebApp
