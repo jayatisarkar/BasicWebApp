@@ -1,5 +1,10 @@
 package com.develogical;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class QueryProcessor {
 
     public String process(String query) {
@@ -11,11 +16,8 @@ public class QueryProcessor {
         } else if (query.toLowerCase().contains("team name")) {
             return "JIB";
         } else if (query.toLowerCase().contains("plus")) {
-//
-//            String[] words = query.toLowerCase().split(" ");
-//            int no1 = Integer.parseInt(words[2]);
-//            int no2 = Integer.parseInt(words[4]);
-//            return String.valueOf(no1 + no2);
+            List<Integer> numbers = getNumbers(query);
+            return String.valueOf(numbers.get(0) + numbers.get(1));
         } else if (query.toLowerCase().contains("largest")) {
             String[] split = query.split("largest:");
             String[] nums = split[1].split(",\\s*");
@@ -25,8 +27,21 @@ public class QueryProcessor {
 
             }
             return String.valueOf(res);
+        } else if (query.toLowerCase().contains("multiplied")) {
+            List<Integer> numbers = getNumbers(query);
+            return String.valueOf(numbers.get(0) * numbers.get(1));
         }
 
         return "";
+    }
+
+    static List<Integer> getNumbers(String s) {
+        List<Integer> numbers = new ArrayList<>();
+        Pattern p = Pattern.compile("\\d+");
+        Matcher m = p.matcher(s);
+        while (m.find()) {
+            numbers.add(Integer.parseInt(m.group()));
+        }
+        return numbers;
     }
 }
