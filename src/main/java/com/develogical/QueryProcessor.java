@@ -52,6 +52,8 @@ public class QueryProcessor {
         } else if (query.toLowerCase().contains("minus")) {
             List<Integer> numbers = getNumbers(query);
             return String.valueOf(numbers.get(0) - numbers.get(1));
+        } else if (query.contains("Theresa")) {
+            return "Theresa May was first elected in 2016.";
         }
 
         return "";
