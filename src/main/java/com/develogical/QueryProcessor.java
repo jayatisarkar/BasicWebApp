@@ -107,10 +107,11 @@ public class QueryProcessor {
       List<Integer> numbers = getNumbers(query);
       int n = numbers.get(0);
       return String.valueOf(fib(n));
-    } else if (query.toLowerCase().contains("Eiffel")) {
+    } else if (query.contains("Eiffel")) {
       return "The Eiffel tower is in Paris.";
+    } else if (query.contains("banana")) {
+      return "A banana is yellow.";
     }
-
     return "";
   }
 }
