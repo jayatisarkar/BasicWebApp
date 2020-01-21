@@ -54,6 +54,10 @@ public class QueryProcessor {
             return String.valueOf(numbers.get(0) - numbers.get(1));
         } else if (query.contains("Theresa")) {
             return "Theresa May was first elected in 2016.";
+        } else if (query.toLowerCase().contains("fibonacci")) {
+            List<Integer> numbers = getNumbers(query);
+            int n = numbers.get(0);
+            return String.valueOf(fib(n));
         }
 
         return "";
@@ -93,5 +97,19 @@ public class QueryProcessor {
     static boolean isCube(int x) {
         final int cuberoot = (int) Math.pow(x, 1.0/ 3.0);
         return cuberoot * cuberoot * cuberoot == x;
+    }
+
+    static int fib(int n)
+    {
+        int a = 0, b = 1, c;
+        if (n == 0)
+            return a;
+        for (int i = 2; i <= n; i++)
+        {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+        return b;
     }
 }
