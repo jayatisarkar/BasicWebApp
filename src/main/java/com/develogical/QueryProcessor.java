@@ -30,6 +30,23 @@ public class QueryProcessor {
         } else if (query.toLowerCase().contains("multiplied")) {
             List<Integer> numbers = getNumbers(query);
             return String.valueOf(numbers.get(0) * numbers.get(1));
+        } else if (query.toLowerCase().contains("primes")) {
+            List<Integer> numbers = getNumbers(query);
+            StringBuilder res = new StringBuilder();
+            for (Integer n : numbers) {
+                if (isPrime(n)) {
+                    res.append(String.valueOf(n)).append(" ");
+                }
+            }
+
+            return res.toString().trim();
+        } else if (query.toLowerCase().contains("square")) {
+//            List<Integer> numbers = getNumbers(query);
+//            for (Integer n : numbers) {
+//                if (isSquare(n)) {
+//                    res.append(String.valueOf(n)).append(" ");
+//                }
+//            }
         }
 
         return "";
@@ -43,5 +60,31 @@ public class QueryProcessor {
             numbers.add(Integer.parseInt(m.group()));
         }
         return numbers;
+    }
+
+    static boolean isPrime(int n) {
+        int i, m = 0, flag = 0;
+        m = n / 2;
+        if (n == 0 || n == 1) {
+            return false;
+        } else {
+            for (i = 2; i <= m; i++) {
+                if (n % i == 0) {
+                    flag = 1;
+                    return false;
+                }
+            }
+            return flag == 0;
+        }
+    }
+
+    static boolean isSquare(int x) {
+        final int sqrt = (int) Math.sqrt(x);
+        return sqrt * sqrt == x;
+    }
+
+    static boolean isCube(int x) {
+        final int cuberoot = (int) Math.pow(x, 1.0/ 3.0);
+        return cuberoot * cuberoot * cuberoot == x;
     }
 }
