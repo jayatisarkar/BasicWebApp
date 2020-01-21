@@ -99,8 +99,9 @@ public class QueryProcessor {
           res.append(String.valueOf(n)).append(", ");
         }
       }
-
-      return res.toString().substring(0, res.length() - 1);
+      String ans = res.toString();
+      ans = ans.substring(0, ans.length() - 1);
+      return ans;
     } else if (query.toLowerCase().contains("square")) {
       List<Integer> numbers = getNumbers(query);
       StringBuilder res = new StringBuilder();
@@ -109,7 +110,9 @@ public class QueryProcessor {
           res.append(String.valueOf(n)).append(", ");
         }
       }
-      return res.toString().substring(0, res.length() - 1);
+      String ans = res.toString();
+      ans = ans.substring(0, ans.length() - 1);
+      return ans;
     } else if (query.toLowerCase().contains("minus")) {
       List<Integer> numbers = getNumbers(query);
       int res = numbers.get(0) * 2;
