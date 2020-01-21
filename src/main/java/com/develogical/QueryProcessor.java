@@ -39,8 +39,12 @@ public class QueryProcessor {
   }
 
   static boolean isCube(int x) {
-    final int cuberoot = (int) Math.pow(x, 1.0 / 3.0);
-    return cuberoot * cuberoot * cuberoot == x;
+    for (int i = 0; i < Math.sqrt(x); i++) {
+      if (i * i * i == x) {
+        return true;
+      }
+    }
+    return false;
   }
 
   static int fib(int n) {
