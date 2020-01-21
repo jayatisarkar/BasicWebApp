@@ -70,7 +70,11 @@ public class QueryProcessor {
       return "JIB";
     } else if (query.toLowerCase().contains("plus")) {
       List<Integer> numbers = getNumbers(query);
-      return String.valueOf(numbers.get(0) + numbers.get(1));
+      int res = 0;
+      for (Integer n : numbers) {
+        res += n;
+      }
+      return String.valueOf(res);
     } else if (query.toLowerCase().contains("largest")) {
       String[] split = query.split("largest:");
       String[] nums = split[1].split(",\\s*");
@@ -82,7 +86,11 @@ public class QueryProcessor {
       return String.valueOf(res);
     } else if (query.toLowerCase().contains("multiplied")) {
       List<Integer> numbers = getNumbers(query);
-      return String.valueOf(numbers.get(0) * numbers.get(1));
+      int res = 1;
+      for (Integer n : numbers) {
+        res *= n;
+      }
+      return String.valueOf(res);
     } else if (query.toLowerCase().contains("primes")) {
       List<Integer> numbers = getNumbers(query);
       StringBuilder res = new StringBuilder();
@@ -104,7 +112,11 @@ public class QueryProcessor {
       return res.toString().substring(0, res.length() - 1);
     } else if (query.toLowerCase().contains("minus")) {
       List<Integer> numbers = getNumbers(query);
-      return String.valueOf(numbers.get(0) - numbers.get(1));
+      int res = numbers.get(0) * 2;
+      for (Integer n : numbers) {
+        res -= n;
+      }
+      return String.valueOf(res);
     } else if (query.contains("Theresa")) {
       return "Theresa May was first elected in 2016.";
     } else if (query.toLowerCase().contains("fibonacci")) {
