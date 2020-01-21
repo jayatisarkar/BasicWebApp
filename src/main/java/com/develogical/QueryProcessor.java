@@ -100,7 +100,7 @@ public class QueryProcessor {
         }
       }
       String ans = res.toString();
-      ans = ans.substring(0, ans.length() - 1);
+      ans = ans.substring(0, ans.length() - 2);
       return ans;
     } else if (query.toLowerCase().contains("square")) {
       List<Integer> numbers = getNumbers(query);
@@ -111,7 +111,7 @@ public class QueryProcessor {
         }
       }
       String ans = res.toString();
-      ans = ans.substring(0, ans.length() - 1);
+      ans = ans.substring(0, ans.length() - 2);
       return ans;
     } else if (query.toLowerCase().contains("minus")) {
       List<Integer> numbers = getNumbers(query);
