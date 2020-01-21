@@ -49,6 +49,9 @@ public class QueryProcessor {
                 }
             }
             return res.toString().trim();
+        } else if (query.toLowerCase().contains("minus")) {
+            List<Integer> numbers = getNumbers(query);
+            return String.valueOf(numbers.get(0) - numbers.get(1));
         }
 
         return "";
