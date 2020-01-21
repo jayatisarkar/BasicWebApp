@@ -131,6 +131,9 @@ public class QueryProcessor {
       return "The Eiffel tower is in Paris.";
     } else if (query.contains("banana")) {
       return "A banana is yellow.";
+    } else if (query.contains("power")) {
+      List<Integer> numbers = getNumbers(query);
+      return String.valueOf(numbers.get(0) ^ numbers.get(1));
     }
     return "";
   }
