@@ -41,12 +41,14 @@ public class QueryProcessor {
 
             return res.toString().trim();
         } else if (query.toLowerCase().contains("square")) {
-//            List<Integer> numbers = getNumbers(query);
-//            for (Integer n : numbers) {
-//                if (isSquare(n)) {
-//                    res.append(String.valueOf(n)).append(" ");
-//                }
-//            }
+            List<Integer> numbers = getNumbers(query);
+            StringBuilder res = new StringBuilder();
+            for (Integer n : numbers) {
+                if (isSquare(n) && isCube(n)) {
+                    res.append(String.valueOf(n)).append(" ");
+                }
+            }
+            return res.toString().trim();
         }
 
         return "";
