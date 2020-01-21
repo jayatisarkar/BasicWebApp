@@ -35,20 +35,20 @@ public class QueryProcessor {
             StringBuilder res = new StringBuilder();
             for (Integer n : numbers) {
                 if (isPrime(n)) {
-                    res.append(String.valueOf(n)).append(" ");
+                    res.append(String.valueOf(n)).append(", ");
                 }
             }
 
-            return res.toString().trim();
+            return res.toString().substring(0, res.length() -1);
         } else if (query.toLowerCase().contains("square")) {
             List<Integer> numbers = getNumbers(query);
             StringBuilder res = new StringBuilder();
             for (Integer n : numbers) {
                 if (isSquare(n) && isCube(n)) {
-                    res.append(String.valueOf(n)).append(" ");
+                    res.append(String.valueOf(n)).append(", ");
                 }
             }
-            return res.toString().trim();
+            return res.toString().substring(0, res.length() -1);
         } else if (query.toLowerCase().contains("minus")) {
             List<Integer> numbers = getNumbers(query);
             return String.valueOf(numbers.get(0) - numbers.get(1));
