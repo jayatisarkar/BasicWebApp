@@ -61,7 +61,9 @@ public class QueryProcessor {
   }
 
   public String process(String query) {
-    query = query.substring(8);
+    if (query.length() > 7 && query.charAt(7) == ':') {
+      query = query.substring(8);
+    }
     query = query.replace("%20", " ");
     query = query.trim();
     if (query.toLowerCase().contains("shakespeare")) {
