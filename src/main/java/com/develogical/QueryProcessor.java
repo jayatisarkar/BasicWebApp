@@ -11,18 +11,20 @@ public class QueryProcessor {
         } else if (query.toLowerCase().contains("team name")) {
             return "JIB";
         } else if (query.toLowerCase().contains("plus")) {
-            String[] words = query.toLowerCase().split(" ");
-            int no1 = Integer.parseInt(words[2]);
-            int no2 = Integer.parseInt(words[4]);
-            return String.valueOf(no1 + no2);
+//
+//            String[] words = query.toLowerCase().split(" ");
+//            int no1 = Integer.parseInt(words[2]);
+//            int no2 = Integer.parseInt(words[4]);
+//            return String.valueOf(no1 + no2);
         } else if (query.toLowerCase().contains("largest")) {
-            String[] words = query.toLowerCase().split(" ");
-            int max = Integer.MIN_VALUE;
-            for (int i = 7; i < words.length; i++) {
-                max = Math.max(Integer.parseInt(words[i]), max);
-            }
+            String[] split = query.split("largest:");
+            String[] nums = split[1].split(",\\s*");
+            int res = Integer.MIN_VALUE;
+            for (String num: nums) {
+                res = Integer.max(Integer.parseInt(num.trim()), res);
 
-            return String.valueOf(max);
+            }
+            return String.valueOf(res);
         }
 
         return "";
